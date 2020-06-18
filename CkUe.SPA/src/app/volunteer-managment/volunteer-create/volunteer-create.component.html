@@ -1,0 +1,191 @@
+<!-- Basic form layout section start -->
+<section id="basic-form-layouts">
+
+  <div class="row text-left match-height">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header pb-2">
+          <h4 class="card-title" id="basic-layout-card-center">Подаци корисника</h4>
+          <p class="mb-0">
+            Попуните податке корисника!<br/>
+            Поља означена знаком <code>*</code> морају бити попуњена док су остала опциона.<br/>
+            Уколико не попуните потребна поља или неко поље унесете у невалидном формату на <code>дну форме</code> ћете добити поруку.
+          </p>
+        </div>
+        <div class="card-content">
+            <div class="px-3">
+              <form class="form" [formGroup]="formAccount" (submit)="onCreateUser()">
+                <div class="form-body">
+                  
+                  <h4 class="form-section"><i class="ft-user"></i> Лични подаци</h4>
+                  
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="projectinput1">Име*</label>
+                        <input type="text" id="projectinput1" class="form-control" formControlName="name">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="projectinput2">Презиме*</label>
+                        <input type="text" id="projectinput2" class="form-control" formControlName="surname">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="projectinput3">Контакт број*</label>
+                        <input type="text" id="projectinput3" class="form-control" formControlName="phone">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="projectinput4">E-mail</label>
+                        <input type="text" id="projectinput4" class="form-control" formControlName="email">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="projectinput5">Место пребивалишта*</label>
+                        <input type="text" id="projectinput5" class="form-control" formControlName="livingPlace">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="projectinput6">Адреса пребивалишта</label>
+                        <input type="text" id="projectinput6" class="form-control" formControlName="livingAddress">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="projectinput7">Школа и факултет</label>
+                        <input type="text" id="projectinput7" class="form-control" formControlName="schoolFaculty">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="projectinput8">Посао</label>
+                        <input type="text" id="projectinput8" class="form-control" formControlName="job">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="projectinput9">Место рођења</label>
+                        <input type="text" id="projectinput9" class="form-control" formControlName="birthPlace">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="projectinput10">Датум рођења</label>
+                        <input type="date" id="projectinput10" class="form-control" formControlName="dateOfBirth" data-toggle="tooltip"
+                          data-trigger="hover" data-placement="top" data-title="Date Opened">
+                      </div>
+                    </div>
+                  </div>
+  
+                  <h4 class="form-section"><i class="ft-plus"></i> Подаци везани за организацију</h4>
+  
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="projectinput11">Датум почетка волонтирања</label>
+                        <input type="date" id="projectinput11" class="form-control" formControlName="volunteeringStartDate" data-toggle="tooltip"
+                          data-trigger="hover" data-placement="top" data-title="Date Opened">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="projectinput12">Препоручен од</label>
+                        <input type="text" id="projectinput12" class="form-control" formControlName="recommended">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="projectinput13">Јединствени волонтерски број*</label>
+                        <input type="text" id="projectinput13" class="form-control" formControlName="uvn">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <h4 class="form-section"><i class="ft-user-plus"></i> Додатни подаци о налогу</h4>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="projectinput14">Лозинка налога*</label>
+                      <input type="password" id="projectinput14" class="form-control" formControlName="password">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="projectinput15">Поновљена лозинка*</label>
+                      <input type="password" id="projectinput15" class="form-control" formControlName="passwordConfirm">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="projectinput16">Права приступа*</label>
+                      <select id="projectinput16" formControlName="accessRights" class="form-control" [value]="0">
+                        <option value="0">Волонтер</option>
+                        <option value="1">Модератор</option>
+                        <option value="2">Администратор</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <app-photo-editor></app-photo-editor>
+
+                <small class="form-text text-muted danger" *ngIf="formAccount && !formAccount.get('name').valid && (formAccount.get('name').dirty || formAccount.get('name').touched)">
+                  Молимо унесите име!
+                </small>
+                <small class="form-text text-muted danger" *ngIf="formAccount && !formAccount.get('surname').valid && (formAccount.get('surname').dirty || formAccount.get('surname').touched)">
+                  Молимо унесите презиме!
+                </small>
+                <small class="form-text text-muted danger" *ngIf="formAccount && !formAccount.get('phone').valid && (formAccount.get('phone').dirty || formAccount.get('phone').touched)">
+                  Молимо унесите контакт број!
+                </small>
+                <small class="form-text text-muted danger" *ngIf="formAccount && !formAccount.get('livingPlace').valid && (formAccount.get('livingPlace').dirty || formAccount.get('livingPlace').touched)">
+                  Молимо унесите место пребивалишта!
+                </small>
+                <small class="form-text text-muted danger" *ngIf="formAccount && !formAccount.get('uvn').valid && (formAccount.get('uvn').dirty || formAccount.get('uvn').touched)">
+                  Молимо унесите јединствени број волонтера!
+                </small>
+                <small class="form-text text-muted danger" *ngIf="formAccount && !formAccount.get('password').valid && (formAccount.get('password').dirty || formAccount.get('password').touched)">
+                  Молимо унесите лозинку налога!
+                </small>
+                <small class="form-text text-muted danger" *ngIf="formAccount && !formAccount.get('passwordConfirm').valid && (formAccount.get('passwordConfirm').dirty || formAccount.get('passwordConfirm').touched) && formAccount.get('passwordConfirm').errors.invalidConfirmPassword">
+                  Потврда лозинке није идентична унетој лозинци.
+                </small>
+  
+                <div class="form-actions">
+                  <button type="button" class="btn btn-raised btn-raised btn-warning mr-1">
+                    <i class="ft-x"></i> Обриши
+                  </button>
+                  <button type="submit" class="btn btn-raised btn-raised btn-primary">
+                    <i class="fa fa-check-square-o"></i> Сачувај
+                  </button>
+                </div>
+              </form>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- // Basic form layout section end -->
