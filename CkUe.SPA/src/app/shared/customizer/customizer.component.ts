@@ -32,7 +32,7 @@ export class CustomizerComponent implements OnInit, AfterViewInit, OnDestroy {
     layout: "Light"
   };
   size = "sidebar-md";
-  isOpen = true;
+  isOpen = false;
   public config: any = {};
   layoutSub: Subscription;
   isBgImageDisplay = true;
