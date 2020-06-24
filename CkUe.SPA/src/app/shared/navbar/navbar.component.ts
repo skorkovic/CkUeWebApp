@@ -3,6 +3,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { LayoutService } from '../services/layout.service';
 import { Subscription } from 'rxjs';
 import { ConfigService } from '../services/config.service';
+import { AuthService } from 'app/_services/auth.service';
+import { AlertifyService } from 'app/_services/alertify.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-navbar",
@@ -20,7 +23,13 @@ export class NavbarComponent implements OnInit, AfterViewInit, OnDestroy {
 
   public config: any = {};
 
-  constructor(public translate: TranslateService, private layoutService: LayoutService, private configService:ConfigService) {
+  constructor(
+      public translate: TranslateService,
+      private layoutService: LayoutService,
+      private configService: ConfigService,
+      private authService: AuthService,
+      private alertify: AlertifyService,
+      private router: Router) {
     const browserLang: string = translate.getBrowserLang();
     translate.use(browserLang.match(/en|es|pt|de/) ? browserLang : "en");
 
@@ -82,5 +91,14 @@ export class NavbarComponent implements OnInit, AfterViewInit, OnDestroy {
     } else {
       this.toggleHideSidebar.emit(true);
     }
+  }
+
+  logout(): void {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.authService.decodedToken = null;
+    this.authService.currentUser = null;
+    this.alertify.message('Одјавили сте се');
+    this.router.navigate(['/pages/login']);
   }
 }
