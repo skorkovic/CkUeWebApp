@@ -16,6 +16,10 @@ export class NGXToastrService {
         this.toastr.info('We do have the Kapua suite available.', 'Turtle Bay Resort');
     }
 
+    typeInfoForgotPassword() {
+        this.toastr.info('Обратите се некоме од администратора система!', 'Заборављена лозинка');
+    }
+
     // Success Type
     typeWarning() {
         this.toastr.warning('My name is Inigo Montoya. You killed my father, prepare to die!');
