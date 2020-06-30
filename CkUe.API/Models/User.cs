@@ -10,8 +10,8 @@ namespace DatingApp.API.Models
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Phone { get; set; }
-        public string livingPlace { get; set; }
-        public string livingAddress { get; set; }
+        public string LivingPlace { get; set; }
+        public string LivingAddress { get; set; }
         public string SchoolFaculty { get; set; }
         public string Job { get; set; }
         public string BirthPlace { get; set; }
